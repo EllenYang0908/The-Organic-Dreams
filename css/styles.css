@@ -1,0 +1,70 @@
+
+body {
+    font-family: 'Cormorant Garamond', cursive;
+    background: #5b5b9e;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.home-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: rgb(76, 179, 214);
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.chart-container {
+    width: 80%;
+    margin: 20px 0;
+    align-items: center;
+}
+
+canvas {
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.container {
+    padding: 20px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.header h1 {
+    font-family: 'Cormorant Garamond', serif; /* 设置h1的字体家族 */
+    font-size: 24px; /* 设置h1的字体大小 */
+    color: #bdabf5; /* 设置h1的字体颜色 */
+    margin-top:0%;
+    margin-bottom: 10px; /* 设置h1的下外边距 */
+}
+.header p {
+    font-family:'Cormorant Garamond', serif; /* 设置p的字体家族 */
+    font-size: 16px; /* 设置p的字体大小 */
+    color: #bdabf5; /* 设置p的字体颜色 */
+    line-height: 1.5; /* 设置p的行高 */
+    margin-top: 0; /* 设置p的上外边距 */
+}
+
+.text {
+    font-family: 'Cormorant Garamond';
+    background: #5b5b9e;
+    color: aliceblue;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    clear: both; /* Ensure it moves below any floating elements */
+    width: 100%;
+    padding: 20px; /* Add padding for better readability */
+    box-sizing: border-box;
+    /* padding: 20px; */
+}

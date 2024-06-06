@@ -1,0 +1,1346 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The Organic Dreams: Visualizing the Unseen</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a02f0e23-519a-4b12-82da-fc0f66b26e65" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1563902452959-f07de6bf4d7f?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🧿</span></div><h1 class="page-title">The Organic Dreams: Visualizing the Unseen</h1><p class="page-description"></p></header><div class="page-body"><p id="06031c57-3c81-4e78-9111-4e4c4e22f9dc" class=""><strong>2024.5 By Ellen/Jiahe Yang</strong></p><p id="31eae254-aa2d-45e8-82c2-c79d302a5efa" class=""><strong>IU000116 Computational Practices: Visualization and Sensing @UAL CCI</strong></p><p id="c37ef622-c35d-4329-bcc1-f41aa6a631e8" class="">
+</p><h2 id="c71f9e0c-3ce2-45f3-90c7-424ebfb87bed" class="">Overview</h2><ol type="1" id="1e0032b4-4b07-478c-8ea5-8e9f7869f8d8" class="numbered-list" start="1"><li><strong>Project Development Timeline</strong></li></ol><ol type="1" id="b0e014a0-54a5-4fdc-a96d-41e583251f2e" class="numbered-list" start="2"><li><strong>Concept</strong></li></ol><ol type="1" id="72092612-03ee-460a-a579-c1d53eec6b1f" class="numbered-list" start="3"><li><mark class="highlight-default"><strong>Background (Motivation)</strong></mark></li></ol><ol type="1" id="854eeb37-ceac-4fb5-84b0-8bba81e96fbe" class="numbered-list" start="4"><li><mark class="highlight-default"><strong>Visual Reference &amp; Design </strong></mark></li></ol><ol type="1" id="0c971e6e-e014-45f0-a0ef-466a9151693a" class="numbered-list" start="5"><li><strong>The 1st Night: Entities in Dreams</strong><ol type="a" id="c63c96b6-b045-46d4-8067-7f8e3a057c44" class="numbered-list" start="1"><li>Data</li></ol><ol type="a" id="f8bbdd60-d3f5-4cf9-9600-3bbfbc4cf175" class="numbered-list" start="2"><li>Data Processing </li></ol><ol type="a" id="27185f7c-ca01-4ec4-93e4-43cb3d61588c" class="numbered-list" start="3"><li>Analysis</li></ol></li></ol><ol type="1" id="ad5b3090-1ddd-4ffd-96f5-5283dbc553a0" class="numbered-list" start="6"><li><strong>The 2nd Night: Lucid Dream</strong><ol type="a" id="a3756f86-0d15-460a-83e1-83e11beaadaf" class="numbered-list" start="1"><li>Data</li></ol><ol type="a" id="0b92e298-20a2-4559-9b0a-4aff93a3e2c6" class="numbered-list" start="2"><li>Demographic Analysis</li></ol><ol type="a" id="62d35357-60bb-4c57-aa5b-ceceec4f6b7b" class="numbered-list" start="3"><li>LDA &amp; Sentiment Analysis</li></ol></li></ol><ol type="1" id="3d104143-063f-4aa7-a4f7-02db60293139" class="numbered-list" start="7"><li><strong>The 3rd Night: The Color of Dreams</strong><ol type="a" id="35c9beb2-4a83-4938-bb60-c9eb5164e79d" class="numbered-list" start="1"><li>Data</li></ol><ol type="a" id="e7c194bb-1f40-4609-8741-5f19861bc80a" class="numbered-list" start="2"><li>Bigrams Analysis</li></ol></li></ol><ol type="1" id="bbbe45b2-7323-4e66-bc6d-19a99a8d1977" class="numbered-list" start="8"><li><strong>The 4th Night: Flying &amp; Falling Dreams</strong><ol type="a" id="ec03694e-e414-4feb-9652-4c099e89966c" class="numbered-list" start="1"><li>Data</li></ol><ol type="a" id="49604514-f949-4615-9cbd-062069c2ca81" class="numbered-list" start="2"><li>Data Processing </li></ol><ol type="a" id="7e6d103d-9e45-4a0a-acc6-a966a213ab94" class="numbered-list" start="3"><li>Interactive Visualization with HTML</li></ol></li></ol><ol type="1" id="13067414-7ff8-42f2-9945-5d6bbf9ce376" class="numbered-list" start="9"><li><strong>The 5th Night: The Dream Catcher</strong><ol type="a" id="90bd511a-718a-49d9-8767-d3f850ec614e" class="numbered-list" start="1"><li>Data</li></ol><ol type="a" id="687253cc-d8d6-4428-9877-7e2688f3b9c6" class="numbered-list" start="2"><li>Data Processing </li></ol><ol type="a" id="cf176ff0-3404-4330-8ce5-71cda0c8d7f7" class="numbered-list" start="3"><li>Visual Reference</li></ol><ol type="a" id="4cfaaf67-c495-4d02-9fd7-d1631f357036" class="numbered-list" start="4"><li>Interactive Visualization with HTML</li></ol></li></ol><ol type="1" id="3d051b59-2bfd-478d-adf0-33f514785555" class="numbered-list" start="10"><li><mark class="highlight-default"><strong>Web Development</strong></mark></li></ol><ol type="1" id="90231025-a28f-4623-9be5-4ae178213db0" class="numbered-list" start="11"><li><strong>Trial and Errors</strong></li></ol><ol type="1" id="43dc047a-1714-4d57-b079-127d0d3b3b4a" class="numbered-list" start="12"><li><mark class="highlight-default"><strong>Reflection</strong></mark></li></ol><ol type="1" id="01efbd5e-e347-4c4f-8828-13c029230e3a" class="numbered-list" start="13"><li><strong>References</strong></li></ol><p id="2379bdc5-a364-41dc-ad66-97b12596320b" class="">
+</p><h2 id="dc77b905-f5f5-4316-8748-baf35e0b71da" class="">1. Project Development Timeline</h2><figure id="af52dc2c-a6fe-4170-afe9-f9c329a92dce" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled.png"><img style="width:1890px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled.png"/></a></figure><h2 id="6fb36568-5ba6-45c3-8a0e-812b7384fa2e" class="">2. Concept</h2><p id="3a9c1d8d-296d-4b56-bab7-f3efe38c65c9" class="">I find dream research fascinating because it delves into the unexplored aspects of the human subconscious, giving me the opportunity to glimpse our deepest thoughts and emotions, which are the parts that make us human. Understanding dreams can potentially unlock new ways to enhance our overall well-being.</p><p id="be53bf58-cc8f-44e6-8b11-a27acc36da02" class=""><mark class="highlight-purple"><strong>“The Organic Dream: Visualizing the Unseen”</strong></mark> is a data visualization project that transforms complex datasets of dream reports into visually compelling stories. The project aims to provide users with an intuitive and engaging way to explore data. </p><h2 id="4a5c782c-0ec9-4e95-96e8-fb115e6092f3" class="">3. Background (Motivation)</h2><p id="c6ffd216-646b-4d8b-97df-d9742cd319fa" class="">I’ve always been interested in dream and daydream research. I have been researching reveries and the collective unconscious, especially the potential for human-machine sharing of the unconscious. To better understand archetypes that are critical for understanding the collective unconscious, I decided to create the “Organic Dreams” visualization project to explore and visualize the intricate patterns and archetypes within human dreams.</p><p id="b682daee-aeeb-4332-9a9c-47f441b41741" class="">
+</p><div id="13e9ecf2-95b1-49e4-9b7c-62ebff1adc4e" class="column-list"><div id="cf16761b-f5de-48ce-9878-871ff47559f2" style="width:50%" class="column"><figure id="ebc3fc69-12d9-436f-b827-32e81519bec2" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/system.png"><img style="width:1238px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/system.png"/></a></figure><p id="877ef597-17c2-4c0f-af08-1ac1d0724421" class="">
+</p></div><div id="8f6a2fcd-4d3c-44ec-8fb9-fd03d322b6f0" style="width:50%" class="column"><figure id="a4adda87-9037-4eaf-aa40-1d881d1f0040" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%201.png"><img style="width:1720px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%201.png"/></a></figure><p id="34fe7a98-39a5-4ce8-9958-abe0bc7102ed" class="">
+</p></div></div><h2 id="220d4ddf-563c-49ed-9570-ac835aed4c13" class="">4. Visual Reference &amp; Design</h2><div id="4df4099f-5ab2-4a30-ab1f-2d18f6c2695a" class="column-list"><div id="d4348c2a-e430-4ad1-b0cd-dbb74cb281d2" style="width:50%" class="column"><figure id="f5b9c8e5-2b70-4668-b78c-140efe6fcfb9" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/ed5cb345-f5d1-4bc3-99c8-916851c55b57.png"><img style="width:554.1125541125541px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/ed5cb345-f5d1-4bc3-99c8-916851c55b57.png"/></a></figure><figure id="ac957d34-06b1-40ee-84b5-81102faca070" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%202.png"><img style="width:4001px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%202.png"/></a></figure><figure id="922d89e2-c6d4-4b70-8a02-b6369473b832" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%203.png"><img style="width:596px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%203.png"/></a></figure><p id="26345670-9185-47b1-85b0-3b68800815a1" class=""><strong>The Shape of Dreams by Federica Fragapane</strong></p><p id="a85304c7-5872-4eda-be6a-6da0a08de355" class=""><a href="https://the-shape-of-dreams.com/#/">https://the-shape-of-dreams.com/#/</a></p></div><div id="5d8fb6c5-c4fe-46e9-9114-4ed296f3f7a7" style="width:50%" class="column"><figure id="1d826cd0-2280-4f4c-a6e2-6040f3d1eb2d" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/4b880aad-cd3b-49b3-be8c-c60e66edb0aa.png"><img style="width:197.7952755905512px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/4b880aad-cd3b-49b3-be8c-c60e66edb0aa.png"/></a></figure><p id="92f6d474-c6d1-401a-b1fe-49ba5ebd109f" class=""><strong>24 Hours of Dream by Erin Rimmer </strong><a href="https://www.behance.net/gallery/24427073/24-hours-of-dreams-">https://www.behance.net/gallery/24427073/24-hours-of-dreams-</a></p></div></div><p id="44d446e8-0c59-4f14-9f55-f762e491c04e" class="">Above are two projects that inspired me the most; both of them touched on the dream topic. Their color palette inspired me to choose dark, low-saturation purple and blue as the main colors for my visual expression. The shapes they’ve used make me feel soft and gentle, so I decided to call my project &#x27;The Organic Dreams&#x27; and choose organic, light shapes for my overall style.</p><h2 id="e97980a6-6a4d-4966-ab43-cfd8702f677d" class="">5. <strong>The 1st Night: Entities in Dreams</strong></h2><p id="fee86b1f-78c4-4ed1-858b-a3f80c1027e0" class="">This data visualization aims to explore the emerging common patterns, or archetypes, in dreams. The dataset is a TSV file scraped from <a href="http://dreambank.net/">dreambank.net</a>, containing only the dream text. Therefore, I thought word clouds could be one of the best ways to visualize text data.</p><h3 id="5a87624e-1c27-4054-96c2-332494e2226d" class="">5.1 Data</h3><p id="efb5b35c-62d5-4d06-a4fc-cd04dde1987b" class=""><strong>Data Source: </strong>Dream bank, a platform where people document their dreams since 2015</p><p id="1c138bdb-4014-4804-b1dd-ac632a9b2078" class=""><strong>Data Size: </strong>21001 rows of dream records</p><h3 id="d4bb2235-c6a3-40db-8a24-beabea9ffe64" class="">5.2 Data Processing </h3><p id="296c5d4e-557a-4681-8b3c-b8698894d0df" class="">In this visualization, I’m turning dream report data into several word clouds. Because the <a href="http://dreambank.net/">dreambank.net</a> data is very large, I am going to divide the data into smaller parts by year and create a word cloud for each year. The shape of each word cloud depends on the largest word that appears in that word cloud.</p><p id="c87dc548-f8a7-41a1-9e6e-0b888dd6f33a" class="">
+</p><p id="15789f89-8e44-42b1-8682-e61b754726e5" class=""><strong>First Try</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="62bf9cc9-2b1b-4a73-b3f0-c815d392a151" class="code"><code class="language-Python">import pandas as pd
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+df = pd.read_csv(&#x27;data/rsos_dream_data.tsv&#x27;, sep=&#x27;\t&#x27;)
+content = df[&#x27;text_dream&#x27;]
+
+#Join the text into a string
+text = &#x27; &#x27;.join(content.dropna())
+
+#Draw wordcloud
+wordcloud = WordCloud(width=800, height=400, background_color=&#x27;white&#x27;).generate(text)
+plt.figure(figsize=(10, 5))
+plt.imshow(wordcloud, interpolation=&#x27;bilinear&#x27;)
+plt.axis(&#x27;off&#x27;)
+plt.show()</code></pre><p id="6039f352-52e7-444e-963d-4d76a5000bcb" class="">Result:</p><div id="69e826cf-2258-426a-9219-9cc306afb5b9" class="column-list"><div id="1ba4ed3d-0880-4274-be2e-3c19d4cfa39b" style="width:50%" class="column"><figure id="27ac3a05-0186-4865-aed6-bc7ed2fbea78" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/firsttry.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/firsttry.png"/></a></figure></div><div id="8b2c8616-bd7c-45dd-9fa5-c4f4994d96f7" style="width:50%" class="column"><p id="3ae0fb31-d36b-4a8e-84bc-b52e96fcb4d7" class="">The most common words are “one,” “see,” and “go,” which are not ideal for detecting the common patterns of dream objects. Therefore, I decided to use natural language processing to filter out <mark class="highlight-purple"><strong>only nouns.</strong></mark></p><p id="287bb87a-19cf-429c-91c7-92cc7771f7f8" class="">
+</p></div></div><p id="42126118-95b3-42ea-98ed-a25deb7e9e64" class=""><strong>Second Try</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a5f4b358-305b-4be8-a781-421aec381fb5" class="code"><code class="language-Python">import pandas as pd
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+from textblob import TextBlob
+import nltk
+
+nltk.download(&#x27;brown&#x27;)
+
+df = pd.read_csv(&#x27;data/rsos_dream_data.tsv&#x27;, sep=&#x27;\t&#x27;)
+content = df[&#x27;text_dream&#x27;]
+text = &#x27; &#x27;.join(content.dropna())
+
+blob = TextBlob(text)
+result = &#x27; &#x27;.join(blob.noun_phrases)
+
+#Draw 
+wordcloud = WordCloud(width=800, height=400, background_color=&#x27;white&#x27;).generate(result)
+plt.figure(figsize=(10, 5))
+plt.imshow(wordcloud, interpolation=&#x27;bilinear&#x27;)
+plt.axis(&#x27;off&#x27;)
+plt.show()</code></pre><figure id="59847862-7987-4e47-b031-81606eff9e69" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%204.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%204.png"/></a></figure><p id="83e30f93-3582-403b-b45a-375ee20ebf0e" class="">It took forever (around 300 minutes) for this to run, my GPU is running out of memory, I paused the program and try to break the text down into smaller parts. </p><p id="a057f528-0b7a-43ea-86e8-fb5e169ab267" class="">
+</p><p id="5fc4490b-ce02-43e8-8be8-fa4ee30f3c81" class=""><strong>Third Try</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e231afeb-181f-4fac-a473-e9c2016dc195" class="code"><code class="language-Python">#Split the combined text into 10 equal parts
+n = 10
+length = len(text)
+part_size = length // n
+text_parts = [text[i * part_size:(i + 1) * part_size] for i in range(n)]
+
+# Ensure the last part includes any remaining text
+if length % n != 0:
+    text_parts[-1] += text[n * part_size:]
+    
+def extract_noun_phrases(text_part):
+    blob = TextBlob(text_part)
+    return &#x27; &#x27;.join(blob.noun_phrases)
+
+noun_phrases_parts = [extract_noun_phrases(part) for part in text_parts]</code></pre><p id="d87d8491-95c5-42fe-90ee-7d8b5119bb94" class="">This does not decrease the computational complexity, so it did not work.</p><p id="b558ccd8-b371-4451-96cc-d6a846569862" class="">
+</p><p id="26fce3ea-2383-4a5c-9cec-decbeb784aca" class=""><strong>Fourth Try</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="58c40839-3264-4a0d-a0d8-d7957c0e7cbb" class="code"><code class="language-Python">#Run textblob again, but only with the first 1 million
+blob = TextBlob(text[:1000000])
+
+noun_phrases_string = &#x27; &#x27;.join(blob.noun_phrases)
+
+#test: wordcloud with first 1000,000 text, noun only
+wordcloud = WordCloud(width=800, height=400, background_color=&#x27;white&#x27;).generate(noun_phrases_string)
+plt.figure(figsize=(10, 5))
+plt.imshow(wordcloud, interpolation=&#x27;bilinear&#x27;)
+plt.axis(&#x27;off&#x27;)
+plt.show()</code></pre><div id="adfd1df2-bf79-4963-8f77-efb50b172927" class="column-list"><div id="0fef4a24-6363-4024-b6af-554bf486619f" style="width:50%" class="column"><figure id="a345fedb-8804-4ba3-a040-5614ec1079b8" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%205.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%205.png"/></a></figure></div><div id="c5236003-bbd1-40a4-bb80-ef2b62ab1045" style="width:50%" class="column"><figure id="cc63046b-7db4-4c26-85d5-3f906a290f3d" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%206.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%206.png"/></a></figure></div></div><p id="e5412532-40b2-4165-9295-263eebd19449" class="">
+</p><p id="3345ea03-a5d1-440b-8fba-14656e73187b" class="">Instead of getting <strong>noun phrases</strong>, I want <mark class="highlight-purple"><strong>just nouns</strong></mark>. </p><p id="b7b338dd-8417-4b17-92f1-24e78559ccad" class="">
+</p><p id="3d067d90-5380-4af3-b94e-5f985ea1d6e1" class=""><strong>Improvements of the Fourth Try</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="53bea9fe-5b56-4e6c-ad93-193770448f84" class="code"><code class="language-Python">#Run textblob again, but only with the first 1 million
+blob = TextBlob(text[:1000000])
+
+# Extract words tagged as nouns
+nouns = [word for word, pos in blob.tags if pos.startswith(&#x27;NN&#x27;)]
+
+# Join the list of nouns into a single string
+nouns_string = &#x27; &#x27;.join(nouns)
+
+print(nouns_string)
+
+#my test: wordcloud with first 1000,000 text, noun only
+wordcloud = WordCloud(width=800, height=400, background_color=&#x27;white&#x27;).generate(nouns_string)
+plt.figure(figsize=(10, 5))
+plt.imshow(wordcloud, interpolation=&#x27;bilinear&#x27;)
+plt.axis(&#x27;off&#x27;)
+plt.show()</code></pre><p id="23bbda0c-0715-460a-a8f2-f437eb933dab" class="">Result:</p><figure id="7bf6f392-8031-4ed6-9b92-b858fd46fc87" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%207.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%207.png"/></a></figure><p id="b00305f6-6afd-4766-abec-f608a14bd55f" class="">
+</p><p id="ccd6ea95-8bb5-4c69-af7e-2f9dad109190" class=""><strong>Add Customized Features</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="67220eeb-61e4-4144-a9ea-ca94cbc3809a" class="code"><code class="language-Python">import numpy as np
+from PIL import Image
+
+house_mask = np.array(Image.open(&#x27;assets/house.jpg&#x27;))
+wordcloud = WordCloud(width=800, height=400, background_color=&#x27;white&#x27;, colormap = &#x27;BuPu_r&#x27;, mask=house_mask).generate(nouns_string)
+
+#The rest part of code remains the same</code></pre><p id="e3462103-2638-4377-a574-adde8fe5a99e" class="">Since one of the most common words in this word cloud is &#x27;house,&#x27; I used a black-and-white house drawing as a mask for my word cloud. Additionally, I changed the color theme. I am going to do the same thing for the remaining 20 million lines of data. I decided to break down the original file into 20 parts, with each part containing 1 million lines, and draw a word cloud for each.</p><div id="a012edf9-f7e2-4e04-a8c8-f3bca7adac99" class="column-list"><div id="05944f4d-0585-454c-89ea-43b7c6b2fc7d" style="width:25%" class="column"><figure id="35881068-cf19-46d0-8389-a707f6325297" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%208.png"><img style="width:612px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%208.png"/></a></figure><p id="f3700621-5bdb-4840-9e0c-9a3f203dc320" class="">
+</p><p id="23920d64-6946-4dbb-a57b-b043b0ff6a6c" class=""><mark class="highlight-blue">And so on so forth.</mark></p></div><div id="a48d96a3-a85b-4231-a1db-e88c96629787" style="width:25%" class="column"><figure id="76c29c06-77e6-44ba-8bab-251be8688648" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%209.png"><img style="width:331px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%209.png"/></a></figure><p id="ccf4e224-7bd7-4d12-a46d-3ef83304f244" class="">
+</p></div><div id="de5489a2-2003-49f3-86ff-38b395323b92" style="width:25%" class="column"><figure id="4b3ad152-ee45-4df0-9f60-f58cd21d89b1" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/mw.jpg"><img style="width:331px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/mw.jpg"/></a></figure></div><div id="434bad8e-74fb-4985-8b18-42d3568e4868" style="width:25%" class="column"><figure id="b14c1db3-ac23-49da-9a56-c851ab6bc59b" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2010.png"><img style="width:597px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2010.png"/></a></figure></div></div><h3 id="ce20aa09-d091-4155-8bcd-6698bb4c8442" class="">5.3 N-Gram Analysis (cr. kaggle)</h3><p id="4fbbeb4b-96c6-4f1f-9713-8e8bf8a047e6" class="">This is an analysis result I found on a Kaggle notebook. It inspired me to consider that n-gram analysis could also be a good way to test a large text dataset. I ran the code for the following graphs but couldn’t figure out a better way to display the data other than bar charts. Therefore, I decided to leave them here for now in case I can think of a better way to use them in the future.</p><div id="c16b7ed6-c8c4-4e14-87ec-ab2ac8cd192c" class="column-list"><div id="a7ac8ae8-e807-42ca-bde3-0afb7d3659a3" style="width:33.33333333333333%" class="column"><figure id="eacf9b6b-cdef-4e74-8b4b-c3de97fbda7f" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2011.png"><img style="width:1604px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2011.png"/></a></figure><p id="b4f5e8b5-25e9-4211-a6b2-ed32f6752f87" class="">
+</p></div><div id="1e2067b0-9f91-4e50-aa1a-12aa5328764f" style="width:33.33333333333333%" class="column"><figure id="cdd4ea0c-ea6e-4a67-9834-94b7c1dc915b" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2012.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2012.png"/></a></figure><p id="10ac31c5-7f10-4f6f-971e-6dba0f816515" class="">
+</p></div><div id="5b8f2474-6c88-4500-9de2-1c3294268716" style="width:33.33333333333333%" class="column"><figure id="c03be6d5-84ae-4122-bcef-70d21fe5b636" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2013.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2013.png"/></a></figure><p id="15911f27-381f-470c-b3ab-e918e6396eb7" class="">
+</p></div></div><p id="932beea0-8b14-485b-9a10-f059bbb6dc15" class="">
+</p><h2 id="39dfe2a9-f0b8-4602-a985-a3c17f10fe7d" class="">6. <strong>The 2nd Night: Lucid Dream</strong></h2><h3 id="dce13d25-3073-48ce-9a7a-8cbd5aafc78d" class="">6.1 Data</h3><p id="6911abba-942f-4e7f-87bd-8f29ddb4dda4" class="">The Sleep and Dream Database, Lucid Dreams Library (2253 Entries)</p><p id="4469a467-01bc-472d-8acd-4fa322902efb" class=""><a href="https://sleepanddreamdatabase.org/search_results/lucid_dreams">https://sleepanddreamdatabase.org/search_results/lucid_dreams</a></p><h3 id="3aad0204-fd07-4112-a4c7-75e2e0a2319d" class="">6.2 Demographic Analysis</h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c4503bb5-6f81-4260-8fd7-f6d92e09f225" class="code"><code class="language-Python">import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+file_path = &#x27;data/lucid-dream.csv&#x27;  # replace with your file path
+data = pd.read_csv(file_path)
+
+print(data.columns)
+
+demographic_features = [
+    &quot;Age Range&quot;, &quot;Sex Assigned at Birth&quot;, &quot;Income Tier&quot;, &quot;Race/Ethnicity&quot;, 
+    &quot;Education Level&quot;, &quot;Region&quot;, &quot;Political Ideology&quot;, &quot;Religious Worship A&quot;, 
+    &quot;US State of Residence&quot;, &quot;Marital Status B&quot;
+]
+
+# Define palettes for different demographic features
+custom_palettes = {
+    &quot;Age Range&quot;: sns.light_palette(&quot;purple&quot;, n_colors=10, reverse=False),
+    &quot;Sex Assigned at Birth&quot;: sns.light_palette(&quot;blue&quot;, n_colors=2, reverse=False),
+    &quot;Income Tier&quot;: sns.light_palette(&quot;purple&quot;, n_colors=3, reverse=False),
+    &quot;Race/Ethnicity&quot;: sns.light_palette(&quot;blue&quot;, n_colors=5, reverse=False),
+    &quot;Education Level&quot;: sns.light_palette(&quot;purple&quot;, n_colors=4, reverse=False),
+    &quot;Region&quot;: sns.light_palette(&quot;blue&quot;, n_colors=6, reverse=False),
+    &quot;Political Ideology&quot;: sns.light_palette(&quot;purple&quot;, n_colors=5, reverse=False),
+    &quot;Religious Worship A&quot;: sns.light_palette(&quot;blue&quot;, n_colors=4, reverse=False),
+    &quot;US State of Residence&quot;: sns.light_palette(&quot;purple&quot;, n_colors=10, reverse=False),
+    &quot;Marital Status B&quot;: sns.light_palette(&quot;blue&quot;, n_colors=5, reverse=False),
+}
+
+# Plot the distribution of each demographic feature
+for feature in demographic_features:
+    plt.figure(figsize=(10, 5))
+    sns.countplot(data=data, x=feature, palette=custom_palettes.get(feature, &quot;deep&quot;))
+    plt.title(f&#x27;Distribution of {feature}&#x27;)
+    plt.xticks(rotation=45)
+    plt.show()</code></pre><p id="a6bbf436-f347-419f-a1f7-b115c4230494" class="">
+</p><p id="7bc4f978-545b-44a4-afa1-8292f51408cb" class=""><strong>Demographic Information Visualization with Bar Charts:</strong></p><div id="df1a5380-46bd-4a63-9eda-d1286045ac28" class="column-list"><div id="8dc0deac-471e-4c2c-9c10-582a854a4580" style="width:50%" class="column"><p id="f2ee438d-8aca-4577-b4a5-75752396817f" class="">
+</p><figure id="13897e50-c956-4249-a855-59e3a64670ca" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2014.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2014.png"/></a></figure><figure id="27204e5b-30d7-4b4c-a5a0-c0403d8f1d3e" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2015.png"><img style="width:850px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2015.png"/></a></figure><figure id="ee4e2d0e-119a-4c0f-8bef-93c086e51ca7" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2016.png"><img style="width:855px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2016.png"/></a></figure></div><div id="d9f4f0b1-bda7-4cac-8d21-182643078b05" style="width:50%" class="column"><p id="ffbae33b-1a14-4a95-a5ad-a293629d4e9d" class="">
+</p><figure id="5057c089-0db1-4f6d-8d7b-5cc4344e63f4" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2017.png"><img style="width:859px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2017.png"/></a></figure><figure id="2ea69014-d7de-420d-9262-c0080b040d0c" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2018.png"><img style="width:885px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2018.png"/></a></figure><figure id="493e08e5-120d-4a51-8ecf-af14ad4bce04" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2019.png"><img style="width:850px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2019.png"/></a></figure></div></div><div id="74222c89-f988-4883-ac06-6f3cce2a37ed" class="column-list"><div id="41bdf3f6-9733-485b-b9f9-2c245b4275a5" style="width:49.99999999999999%" class="column"><figure id="14938cf9-e8fc-4439-9cf4-5abe748e1ecb" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2020.png"><img style="width:850px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2020.png"/></a></figure><figure id="43db7589-1a48-4ca8-8623-1950993193d7" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2021.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2021.png"/></a></figure><p id="ddc47049-c515-4e03-9c4e-162c483bec9e" class="">
+</p></div><div id="471d3840-6170-47a4-a544-4e14e1c526b6" style="width:49.99999999999999%" class="column"><figure id="218f289e-6c41-4072-8b63-cab138fadbfb" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2022.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2022.png"/></a></figure><figure id="5ffc31cd-9259-40f5-ba0a-f2c3c4a6e82f" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2023.png"><img style="width:859px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2023.png"/></a></figure><p id="e6532607-e3c4-463d-a6b9-89d56f8a5b2e" class="">
+</p></div></div><p id="c26ae0f2-199c-45db-9821-4f8f5b7f9bf6" class=""><strong>Demographic Information Visualization with Pie Charts:</strong></p><div id="f601ee09-6609-457d-8263-080a2dfa4930" class="column-list"><div id="35ea5d97-0c7d-4ea0-8437-57911cf1ec07" style="width:25%" class="column"><figure id="92313c87-84db-401e-9187-8ec519bd965f" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2024.png"><img style="width:700px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2024.png"/></a></figure><figure id="5db4e710-cf11-4fbe-a5d4-9a01f5be4cf5" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2025.png"><img style="width:647px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2025.png"/></a></figure><p id="6b9feeb2-3842-486d-a7cb-f0c539b38f0b" class="">
+</p></div><div id="c1d3e709-8a5f-4e33-80a6-236fc7ef5361" style="width:25%" class="column"><figure id="d40fb7a9-0ea7-48f6-a55a-26de5e0479d7" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2026.png"><img style="width:802px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2026.png"/></a></figure><p id="485d9efc-386a-4b02-8233-5fd1acd032ef" class="">
+</p><figure id="2edda9ef-271e-4c42-82c2-f3629809cc66" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2027.png"><img style="width:813px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2027.png"/></a></figure></div><div id="bbcae822-cef3-4bf3-964c-b1e9ce62b856" style="width:25%" class="column"><figure id="e0d68583-fe96-452c-ae3d-8aa8a032c288" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2028.png"><img style="width:865px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2028.png"/></a></figure><p id="e710d521-25a9-4eb6-b956-caa15f3396d7" class="">
+</p><figure id="ece5d5fc-1d00-410a-b3f1-a182f99963c3" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2029.png"><img style="width:331px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2029.png"/></a></figure></div><div id="17b72376-1166-4983-b170-c176a261e394" style="width:25%" class="column"><figure id="6ba7da9a-e0c1-4627-a6bc-65829911d7c0" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2030.png"><img style="width:640px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2030.png"/></a></figure><figure id="f74fb00e-2c84-4b86-b4b2-c43bb2d9c3a1" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2031.png"><img style="width:702px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2031.png"/></a></figure><p id="a5de9bad-a355-48f2-be46-98e46122d8af" class="">
+</p></div></div><h3 id="375ea190-3372-4636-99e6-17568bb3720e" class="">6.3 Data Processing </h3><p id="0edfc59f-4206-4280-8a18-fc3334829ef3" class=""><strong>Latent Dirichlet Allocation (LDA) Topic Modelling </strong></p><div id="fae3002c-3b65-4a20-9639-2ac9f080aaad" class="column-list"><div id="c171bc82-3295-4545-9e1d-487930dc5b2b" style="width:50%" class="column"><p id="7776ad98-ad24-4f2f-90e2-0df425680431" class="">
+</p><figure id="f836e1fc-0f3d-4d50-9781-d87060471128" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2032.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2032.png"/></a></figure><p id="2d4f9c22-533d-487d-8e4d-3fe87104c7ef" class="">
+</p></div><div id="b056b58e-f601-4141-9817-9cd5e33a64f4" style="width:50%" class="column"><p id="4f2a1d3c-910e-4d26-b1a6-3edb2132f678" class="">
+</p><figure id="174b6fc2-8234-41c4-b68f-19372f5effa0" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/7a4ec73e-54b4-43ec-acba-6e5777ecfad4.png"><img style="width:516.1290322580645px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/7a4ec73e-54b4-43ec-acba-6e5777ecfad4.png"/></a></figure></div></div><p id="187fc2c4-504c-4dd1-b454-c2d1ab093e4d" class="">Above is a sample LDA on topic modelling</p><p id="7cfcca4c-296d-4d86-88e0-17df77fb3320" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c253f6f5-d5d5-44a2-aab1-886c5f9a7da0" class="code"><code class="language-Python">import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.decomposition import LatentDirichletAllocation
+
+file_path = &#x27;data/lucid-dream.csv&#x27;  # replace with your file path
+data = pd.read_csv(file_path)
+
+data.dropna(subset=[&#x27;answer_text&#x27;], inplace=True)
+
+documents = data[&#x27;answer_text&#x27;].tolist()
+
+# Convert text data into document-term matrix
+vectorizer = CountVectorizer(max_df=0.95, min_df=2, stop_words=&#x27;english&#x27;)
+doc_term_matrix = vectorizer.fit_transform(documents)
+
+#LDA
+num_topics = 5  # Number of topics to identify
+lda_model = LatentDirichletAllocation(n_components=num_topics, random_state=42)
+lda_output = lda_model.fit_transform(doc_term_matrix)
+
+feature_names = vectorizer.get_feature_names_out()
+topic_keywords = []
+for topic_weights in lda_model.components_:
+    top_keyword_locs = (-topic_weights).argsort()[:10]  # Select top 10 keywords for each topic
+    topic_keywords.append([feature_names[i] for i in top_keyword_locs])
+
+for i, keywords in enumerate(topic_keywords):
+    print(f&quot;Topic {i + 1}: {&#x27; | &#x27;.join(keywords)}&quot;)
+
+# Assign topics to documents
+data[&#x27;topic&#x27;] = lda_output.argmax(axis=1)
+
+topic_distribution = data[&#x27;topic&#x27;].value_counts(normalize=True)
+print(&quot;\nTopic Distribution:&quot;)
+print(topic_distribution)
+
+topic_distribution.plot(kind=&#x27;bar&#x27;, figsize=(8, 6))
+plt.title(&#x27;Topic Distribution&#x27;)
+plt.xlabel(&#x27;Topic&#x27;)
+plt.ylabel(&#x27;Proportion&#x27;)
+plt.xticks(rotation=0)
+plt.show()
+</code></pre><p id="dcd3b3fe-8cfd-4f99-86c9-bfbd7b1a45db" class="">Result:</p><div id="29cfb95e-ea5a-45cb-8b22-51d6d26be983" class="column-list"><div id="188f0e53-b61f-4f5f-9d17-3323ac093534" style="width:50%" class="column"><figure id="ee8cd0c0-daf4-473f-aa07-bd724d2ea211" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2033.png"><img style="width:1446px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2033.png"/></a></figure><p id="b5602bc6-a6e5-41b3-8da9-d764a85fedd0" class="">
+</p></div><div id="85c19454-6904-4108-8e17-44c51aefc1cc" style="width:50%" class="column"><figure id="110b3e2b-ef77-4d77-9ba6-20173ac0c75b" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2034.png"><img style="width:691px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2034.png"/></a></figure><p id="ae7839d5-cd25-4ff0-9253-a4b41c755df3" class="">
+</p></div></div><p id="214f2102-5a22-49c5-aefb-e15a2eb49114" class="">
+</p><p id="ceb68498-e580-4176-9f5b-474c3b36e448" class=""><strong>Sentiment Analysis</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="dfc76e66-67eb-44f9-b1ac-382b9e56256e" class="code"><code class="language-Python">import pandas as pd
+import matplotlib.pyplot as plt
+from textblob import TextBlob
+
+file_path = &#x27;data/lucid-dream.csv&#x27;
+data = pd.read_csv(file_path)
+
+data.dropna(subset=[&#x27;answer_text&#x27;], inplace=True)
+
+sentiment_scores = data[&#x27;answer_text&#x27;].apply(lambda x: TextBlob(str(x)).sentiment.polarity)
+
+# Classify sentiment as positive/negative/neutral
+sentiment_classes = []
+for score in sentiment_scores:
+    if score &gt; 0:
+        sentiment_classes.append(&#x27;Positive&#x27;)
+    elif score &lt; 0:
+        sentiment_classes.append(&#x27;Negative&#x27;)
+    else:
+        sentiment_classes.append(&#x27;Neutral&#x27;)
+
+sentiment_counts = pd.Series(sentiment_classes).value_counts()
+
+plt.figure(figsize=(8, 8))
+sentiment_counts.plot(kind=&#x27;pie&#x27;, autopct=&#x27;%1.1f%%&#x27;, colors=[&#x27;skyblue&#x27;, &#x27;lightcoral&#x27;, &#x27;lightgreen&#x27;])
+plt.title(&#x27;Sentiment Distribution of Lucid Dream Text Content&#x27;)
+plt.ylabel(&#x27;&#x27;)
+plt.axis(&#x27;equal&#x27;)  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.show()
+</code></pre><p id="b094f653-1e80-4899-97cd-585ef211011d" class="">Result:</p><figure id="09084bec-ad19-4bba-8ab7-0f6b61a394ae" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2035.png"><img style="width:692px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2035.png"/></a></figure><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c1e5ec5d-6316-4005-a7c7-ed1df57f04f9" class="code"><code class="language-Python">#Append sentiment score and topic to each line of data
+
+import pandas as pd
+from textblob import TextBlob
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.decomposition import LatentDirichletAllocation
+
+file_path = &#x27;data/lucid-dream.csv&#x27;
+data = pd.read_csv(file_path)
+data.dropna(subset=[&#x27;answer_text&#x27;], inplace=True)
+documents = data[&#x27;answer_text&#x27;].tolist()
+vectorizer = CountVectorizer(max_df=0.95, min_df=2, stop_words=&#x27;english&#x27;)
+doc_term_matrix = vectorizer.fit_transform(documents)
+num_topics = 5  # Number of topics to identify
+lda_model = LatentDirichletAllocation(n_components=num_topics, random_state=42)
+lda_output = lda_model.fit_transform(doc_term_matrix)
+data[&#x27;topic&#x27;] = lda_output.argmax(axis=1)
+data[&#x27;sentiment_score&#x27;] = data[&#x27;answer_text&#x27;].apply(lambda x: TextBlob(str(x)).sentiment.polarity)
+
+updated_file_path = &#x27;data/lucid-dream-with-sentiment-topic.csv&#x27;
+data.to_csv(updated_file_path, index=False)</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="810ba852-4884-4782-8299-3a351984fc30" class="code"><code class="language-Python">import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from textblob import TextBlob
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.decomposition import LatentDirichletAllocation
+
+file_path = &#x27;data/lucid-dream-with-sentiment-topic.csv&#x27;  
+data = pd.read_csv(file_path)
+
+data.dropna(subset=[&#x27;answer_text&#x27;, &#x27;Age&#x27;], inplace=True)
+documents = data[&#x27;answer_text&#x27;].tolist()
+
+vectorizer = CountVectorizer(max_df=0.95, min_df=2, stop_words=&#x27;english&#x27;)
+doc_term_matrix = vectorizer.fit_transform(documents)
+
+num_topics = 5  # Number of topics to identify
+lda_model = LatentDirichletAllocation(n_components=num_topics, random_state=42)
+lda_output = lda_model.fit_transform(doc_term_matrix)
+
+data[&#x27;topic&#x27;] = lda_output.argmax(axis=1)
+
+data[&#x27;sentiment_score&#x27;] = data[&#x27;answer_text&#x27;].apply(lambda x: TextBlob(str(x)).sentiment.polarity)
+
+# Plot bubble chart
+plt.figure(figsize=(14, 8))
+sns.scatterplot(
+    data=data,
+    x=&#x27;Age&#x27;,
+    y=&#x27;sentiment_score&#x27;,
+    hue=&#x27;topic&#x27;,
+    palette=&#x27;viridis&#x27;,
+    s=100,  #bubble size
+    alpha=0.6,
+    edgecolor=&#x27;w&#x27;
+)
+plt.title(&#x27;Sentiment Scores Across Age Groups with Topic Indication&#x27;)
+plt.xlabel(&#x27;Age&#x27;)
+plt.ylabel(&#x27;Sentiment Score&#x27;)
+plt.legend(title=&#x27;Topic&#x27;, bbox_to_anchor=(1.05, 1), loc=&#x27;upper left&#x27;)
+plt.show()</code></pre><figure id="f30ef4e0-d62d-47c7-bda6-c1bf9101b2df" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2036.png"><img style="width:1296px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2036.png"/></a></figure><p id="961f04d6-6bed-42a2-a927-8243f8dc76e6" class="">
+</p><p id="92c243b1-3057-4e2a-bbec-eb51d67d63a3" class=""><strong>Demographic Information of Lucid Dreams Visualization (Interactivity Assisted by Flourish)</strong></p><div id="b7d04828-8f87-4422-b1f2-32e09b29c892" class="column-list"><div id="38345840-aa75-4ada-97ef-c2f6973f44d8" style="width:50%" class="column"><figure id="f71b03d7-b8e9-4672-a030-810f0c9611e6" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2037.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2037.png"/></a></figure><p id="22ea7529-1b99-4638-8c31-75470e60de75" class="">
+</p></div><div id="de3d066f-bafb-4455-91e0-5df6bada9a19" style="width:50%" class="column"><figure id="16197fa4-df60-465e-8287-b1873fc422b8" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2038.png"><img style="width:2040px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2038.png"/></a></figure><p id="1d58c4c2-8a3d-472e-9564-1ff7526961c8" class="">
+</p></div></div><h2 id="e81b13bc-e4ac-4c0b-b713-c9d01be59b1f" class="">7. <strong>The 3rd Night: The Color of Dreams</strong></h2><h3 id="7a2e674d-7674-4627-a7fd-dc4115967958" class="">7.1 Data</h3><p id="e258fa0b-8286-4046-8923-db4faa54c8a1" class="">The Sleep and Dream Database (SDDb)</p><p id="47a2b31d-5bed-4e4d-83e5-ed4f42da2f3e" class="">Filter: Dreams with the word “purple”/”blue”/”white”, </p><div id="65a3487c-e2a6-462a-9a44-3a3d066bb761" class="column-list"><div id="fadc5333-8998-47ce-a96a-594918aeded8" style="width:50%" class="column"><figure id="a604cd3e-da6d-4c13-95a1-592f95d49af8" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2039.png"><img style="width:1546px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2039.png"/></a></figure><p id="4e62393c-5a94-49d4-9359-17138571ca46" class="">There are 173 dream records that contains the word “purple”,</p><p id="ed4dc083-8458-43f9-8f9c-1566c2d35b98" class="">
+</p></div><div id="248db81e-a3d7-4ba0-a89a-c56198413683" style="width:50%" class="column"><figure id="800c85ad-7e75-45bf-8e36-145f8f68a425" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2040.png"><img style="width:1580px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2040.png"/></a></figure><p id="8e390fae-0f09-4792-b946-1f836c36734b" class="">This is a word cloud of nouns occurred in “purple-dream.csv” coded with Python.</p></div></div><h3 id="0c7c5892-77cc-44f8-8575-90af211320d5" class="">7.2 Bigrams Analysis</h3><p id="033c513a-1ea5-4355-ac36-2be83e2da4cd" class="">I wonder what objects will occur in dreams with specific colors. Therefore, I want to find the words that follow &#x27;purple&#x27; and extract those &#x27;purple x&#x27; bigrams, then turn them into a visualization. (In other words, this visualization highlights the words that frequently follow &#x27;purple&#x27; in the dream texts.) I did the same with datasets containing dreams that include &#x27;blue&#x27; and &#x27;white.’ It is an interactive graph on the web page.</p><div id="3e0f20d3-493f-406a-9a13-6350b93c6522" class="column-list"><div id="c6f22817-3f67-4dae-8d84-f2ff87847b80" style="width:33.33333333333333%" class="column"><figure id="34afe768-c986-41d0-87ba-4802710f61d1" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Most_Common__Purple_X__Bigrams_in_Dreams_(1).png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Most_Common__Purple_X__Bigrams_in_Dreams_(1).png"/></a></figure><p id="b47ab59d-2ec8-4a32-b1e0-44f1509033ae" class="">“purple-dream.csv”</p></div><div id="f26cf986-3891-4c32-ac5c-22b8484bae75" style="width:33.33333333333333%" class="column"><figure id="7c9ac48a-7074-4a35-9054-7a148e2a9bdc" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Most_Common__Blue_X__Bigrams_in_Dreams.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Most_Common__Blue_X__Bigrams_in_Dreams.png"/></a></figure><p id="57c0d4bd-1b06-46e8-b133-31425aa52ecc" class="">“blue-dream.csv”</p></div><div id="4e44814d-09e4-4c43-8903-3ea72021314e" style="width:33.33333333333333%" class="column"><figure id="7b7fbb48-68b5-4670-b802-faa6fdfcef53" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Most_Common__White_X__Bigrams_in_Dreams.png"><img style="width:1071px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Most_Common__White_X__Bigrams_in_Dreams.png"/></a></figure><p id="00f2caf1-b07f-4f0b-a7d4-b0d850c24657" class="">“white-dream.csv”</p></div></div><h2 id="a7437b5b-b6b6-433a-ab0e-0f1c62689870" class="">8. <strong>The 4th Night: Flying &amp; Falling Dreams</strong></h2><h3 id="5e29a134-b7ed-47e8-b22d-f92561a5b4fa" class="">8.1 Data</h3><p id="8ebe5133-d1c3-443f-9120-340ff73835d1" class="">The Sleep and Dream Database (SDDb), Falling Dreams Library + Flying Dreams Library</p><p id="c5846f0d-8462-4b47-9bc3-48f5e27ff8b1" class=""><a href="https://sleepanddreamdatabase.org/search_results/flying_dreams">https://sleepanddreamdatabase.org/search_results/falling_dreams</a></p><p id="366a4458-df1a-4db0-904c-1dcdc0f00079" class=""><a href="https://sleepanddreamdatabase.org/search_results/flying_dreams">https://sleepanddreamdatabase.org/search_results/flying_dreams</a></p><p id="bd942982-7826-4edd-bd13-919d32b1cda2" class="">The SDDb has two interesting libraries: the “flying dreams” and the “falling dreams”. They categorized these two libraries by some keywords related to “fly” or “fall”. The “Flying Dream” library has 1201 entries and the “Falling Dream” library has 1948 entries.</p><div id="17f9ca26-d517-4597-a01e-51df57c47a1b" class="column-list"><div id="92a2bb16-c193-4784-83c7-e31af6758dcb" style="width:25%" class="column"><figure id="4dc7b341-ddc0-4b86-bf3c-94508b4ee7ce" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2041.png"><img style="width:275px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2041.png"/></a></figure></div><div id="c8d813d9-7f53-4f46-b288-f3119aa53211" style="width:25%" class="column"><figure id="dba72108-5b8b-48a2-b2f0-539a1fe24dac" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2042.png"><img style="width:664px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2042.png"/></a></figure></div><div id="d72c32f3-35cd-4948-a5dc-4c9736537b87" style="width:25%" class="column"><figure id="ee5b1e57-e40f-4688-94b7-e5cf02dde95f" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2043.png"><img style="width:676px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2043.png"/></a></figure></div><div id="60939ce1-5aaa-48e6-95c6-edb339e5c3b8" style="width:25%" class="column"><figure id="4bc7bb51-a0a9-4aa3-8399-5b5c68b573a6" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2044.png"><img style="width:275px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2044.png"/></a></figure></div></div><h3 id="c685a03b-4b1c-4699-8c3d-72390892d61b" class="">8.2 Data Processing </h3><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16588b93-c57a-4185-9062-b50dd01b9393" class="code"><code class="language-Python">import pandas as pd
+import spacy
+from collections import Counter
+import plotly.express as px
+from plotly.subplots import make_subplots
+
+nlp = spacy.load(&quot;en_core_web_sm&quot;)
+
+def extract_nouns(text):
+    doc = nlp(text)
+    # Extract nouns
+    nouns = [token.text for token in doc if token.pos_ == &quot;NOUN&quot;]
+    return nouns
+
+def generate_bubble_chart(filename, subplot_titles):
+    df = pd.read_csv(filename)
+    
+    df[&#x27;keyword&#x27;] = df[&#x27;answer_text&#x27;].apply(lambda x: &quot;, &quot;.join(extract_nouns(x)))
+    
+    # Flatten the list of keywords
+    all_keywords = [keyword for sublist in df[&#x27;answer_text&#x27;].apply(extract_nouns).tolist() for keyword in sublist]
+    
+    keyword_counts = Counter(all_keywords) # Count frequency
+    
+    keywords = list(keyword_counts.keys())
+    counts = list(keyword_counts.values())
+   
+    plot_df = pd.DataFrame({&#x27;Keyword&#x27;: keywords, &#x27;Frequency&#x27;: counts})
+    
+    #bubble chart
+    fig = px.scatter(plot_df, x=range(len(keywords)), y=&#x27;Frequency&#x27;, size=&#x27;Frequency&#x27;,
+                     hover_name=&#x27;Keyword&#x27;, title=&#x27;Bubble Chart of Extracted Keywords&#x27;)
+    
+    return fig
+
+def main():
+    falling_dream_fig = generate_bubble_chart(&#x27;data/falling-dream.csv&#x27;, &#x27;Falling Dream&#x27;)
+    flying_dream_fig = generate_bubble_chart(&#x27;data/flying-dream.csv&#x27;, &#x27;Flying Dream&#x27;)
+
+    combined_fig = make_subplots(rows=2, cols=1, subplot_titles=(&#x27;Falling Dream&#x27;, &#x27;Flying Dream&#x27;))
+    combined_fig.add_trace(falling_dream_fig.data[0], row=1, col=1)
+    combined_fig.add_trace(flying_dream_fig.data[0], row=2, col=1)
+
+    combined_fig.update_layout(height=800, title_text=&quot;Dream Analysis&quot;)
+
+    combined_fig.write_html(&#x27;combined_bubble_charts.html&#x27;)
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre><h3 id="232437f6-978a-4b3d-81a9-56ca7df9ba79" class="">8.3 Interactive Visualization with HTML</h3><p id="fec53076-cd15-4f77-99bb-1276f109b458" class="">I first extracted the keywords (nouns) with the NLTK library and then utilized the Plotly library to deploy the graphs onto the web. This is an interactive graph. Users can hover over the bubbles to see which keywords frequently appear in &#x27;flying dreams&#x27; and &#x27;falling dreams.’</p><p id="2dd18658-66ba-4bb1-b3de-0b7043423a8d" class="">
+</p><figure id="2d6c9368-7fdd-49dc-9627-45d2b2252599" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/69c6c577-c148-4c24-a2c7-8b7533593ef9.png"><img style="width:555.5555555555555px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/69c6c577-c148-4c24-a2c7-8b7533593ef9.png"/></a></figure><h2 id="f15e3552-7d72-449a-ba16-81590156a0a2" class="">9. <strong>The 5th Night: The Dream Catcher</strong></h2><p id="28467c28-b5fd-49df-a006-bda56a0a9f1d" class="">In this visualization I want to map the relationship between dream patterns and emotions. To reach this goal, I need to:</p><ol type="1" id="c277b9a0-322a-440c-bb9a-2368730ec097" class="numbered-list" start="1"><li>Label the dream records with their dominant emotion</li></ol><ol type="1" id="e76a1e3a-1362-4836-b03c-8bc66d5637d9" class="numbered-list" start="2"><li>Extract the keyword of each line of dream record</li></ol><ol type="1" id="232e574a-b156-47fb-8117-5775eee20ce7" class="numbered-list" start="3"><li>Record the frequency of each keyword</li></ol><ol type="1" id="050493bb-456f-4b78-8425-fb21fd374aa5" class="numbered-list" start="4"><li>Map the dominant emotion and the keywords</li></ol><ol type="1" id="fee3bd06-7c5b-4546-a685-2397e8d7279a" class="numbered-list" start="5"><li>Color code the emotions, <mark class="highlight-purple"><strong>weave everything into a dream catcher.</strong></mark></li></ol><h3 id="8b52b1ae-6a06-48b3-9833-b8aab95c9533" class="">9.1 Data</h3><p id="954bbdd1-638e-4016-b400-c532f1514585" class=""><strong>Data Source: </strong>Dream bank, a platform where people document their dreams since 2015.</p><p id="93f5b2f6-af70-4cd2-b15e-bc222109cade" class=""><strong>Data Size: </strong>The original dataset contains 21001 rows of dream records. I only used 10000 records for easier and faster computation.</p><h3 id="c49cf9d9-8aaa-4109-8d1e-c2cbd808a4f9" class="">9.2 Data Processing </h3><p id="1343463c-74c5-4443-9751-6a5886dfdf29" class="">In this visualization, I am using sentiment analysis to group the emotions of different dreams. Then, I’ll color-code the emotions and weave them all together into a dream catcher net. First, I ran a pre-trained emotion detection model, EmoBerta, to label each dream record with its dominant emotion.</p><p id="d5f00ffe-2556-4e8a-bfa4-5acc11909cdc" class="">Google Colab for this process: <a href="https://colab.research.google.com/drive/1WHw4I5utEkNx2aQ9-izi8soplKBr3Pes#scrollTo=_N5QAwV-hstL">https://colab.research.google.com/drive/1WHw4I5utEkNx2aQ9-izi8soplKBr3Pes#scrollTo=_N5QAwV-hstL</a></p><div id="12bdf48d-5780-400d-8438-68c7287c6f60" class="column-list"><div id="f285ee97-2877-4a21-b79f-62fa1f9902ca" style="width:33.33333333333333%" class="column"><figure id="0737faf2-f0bb-4ad9-9c11-96e075e72ea3" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2045.png"><img style="width:382px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2045.png"/></a></figure><p id="c87cdf2a-a6ab-4a34-a99e-79d81fa0844a" class="">
+</p></div><div id="99bd0868-4098-40d7-9822-8828a25e76ee" style="width:33.33333333333333%" class="column"><figure id="97e1a188-825b-42fb-abf0-58d36081a1eb" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2046.png"><img style="width:2002px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2046.png"/></a></figure></div><div id="b3df76db-daf3-4cc7-80c2-606cfc0ef32d" style="width:33.33333333333333%" class="column"><figure id="a6564874-7d12-4b54-820f-c58078acca3a" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2047.png"><img style="width:382px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2047.png"/></a></figure></div></div><div id="62dc468a-c7c3-435c-a03b-7924861466fa" class="column-list"><div id="7303dfb2-68aa-4b44-8cbc-1fe7ecc0be35" style="width:50%" class="column"><figure id="d9764505-4e50-406e-835d-bdf5db45af92" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2048.png"><img style="width:1089px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2048.png"/></a></figure></div><div id="d9f586f7-7f50-4a88-bba8-2223009ec86b" style="width:50%" class="column"><p id="36aead00-16a3-4e8f-8f4b-761149d45f04" class="">I used senborn library to plot the distribution of emotions of dreams to get and overall idea first. And the next step is tokenization and stopword removal.</p></div></div><p id="10398087-a5cd-4fc2-b0eb-d81ea0d94163" class="">
+</p><h3 id="e12d5dde-3f24-4997-bc4b-3c7d02edf3ab" class="">9.3 Visual Reference</h3><div id="6c6a6cf6-00a2-404f-9f73-94fc4d0c148a" class="column-list"><div id="f378e092-c69f-4e06-b5ef-10cebc390ef4" style="width:50%" class="column"><figure id="f89222b4-b689-4219-a353-874365ea1233" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2049.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2049.png"/></a></figure><figure id="a954d3dd-d461-42aa-a737-5811adcfcfc8" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2050.png"><img style="width:485px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2050.png"/></a></figure><p id="20c1a4e2-6cb0-4769-8f67-310fe485f8bf" class="">
+</p></div><div id="af287ac1-7e20-40b4-bd05-b005019c54ee" style="width:50%" class="column"><p id="6c614dac-ed68-4030-a065-baf535d6af64" class="">Some mapping graphs whose visual design I enjoyed. The intertwining colored lines look like a woven graph.</p><p id="38e57441-99c8-4d06-8102-fe86ba3ddb78" class="">
+</p><p id="30f08b7c-f588-4143-a72b-438dd2e82a42" class="">
+</p><p id="1f8f7d7e-9f6e-422a-8299-c4925ce11f97" class="">
+</p><p id="65b40c73-7ce3-4e82-ae7c-0c7c05a22f87" class="">
+</p><p id="e7a2b923-508e-4d97-83bf-9766b519bc25" class="">
+</p><p id="c7a9184e-5a0c-483b-b048-1437e44bc43f" class="">
+</p><p id="7f867544-5fe7-4a30-afa4-1f05802e14b5" class="">A dream catcher infographic in which the author introduced each part of a dream catcher. I think each element of a dream catcher could be linked to a visualization related to dream data. This could be done in the future development of this project.</p><p id="9032e687-e066-4d07-8720-6921bfdbbc1e" class="">
+</p></div></div><p id="93ff9293-b709-41ee-af01-e4831f7f8e8b" class="">
+</p><h3 id="298ccdf3-9134-4eb7-9a3c-31de3d28bacb" class="">9.4 Interactive Visualization with HTML</h3><p id="f4a312a2-3b2e-4844-b83d-d5c1c94ad28f" class=""><strong>First Try</strong></p><div id="bbf106aa-f21d-4743-81c4-6f84af279ebb" class="column-list"><div id="4b4e4d53-991f-4733-a4b3-5eb8aa3ca02c" style="width:50%" class="column"><figure id="4b6ab006-6b73-42f9-880a-3164d3e0069a" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2051.png"><img style="width:1520px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2051.png"/></a></figure><p id="a5558265-e2f1-4528-8013-e1e31b45d7e9" class="">
+</p><p id="76c27ddb-a5f2-4159-8f97-a2eb0e1fb1e7" class="">
+</p><p id="618eb801-6b71-42f7-bdd3-f6838e95579e" class="">
+</p><p id="4d800467-ab0f-4752-859c-5c4a8d8a8ffd" class="">
+</p><p id="21a91140-f19a-4339-bce5-6fc02bbf7793" class="">
+</p><p id="990996ae-362b-4ba9-94df-e8d7ec3300c4" class="">
+</p><p id="c3e6bb89-599d-4703-b428-dfae2cd1836b" class="">
+</p><p id="74a83fac-cdce-48df-a56b-8cf55445a878" class="">
+</p><p id="7593da8a-eba1-4a2d-a079-448aa669d238" class="">
+</p><p id="d8496e31-8dce-47b2-8f0e-9ba97fd80ba7" class="">
+</p><p id="66bcfc64-f14a-4f30-b0bb-8fe32a0ab27a" class="">
+</p><p id="6394aa72-204d-48ae-a2cb-d44eca9d0ae8" class="">
+</p><p id="d500214f-be23-4e97-81f5-2eb37dd355f2" class="">
+</p><p id="a7f7928b-2c5a-4a11-aaae-4230d03107fa" class="">
+</p><p id="013f9d15-3d50-4a55-9337-b18d26cafd39" class="">
+</p><p id="31dfd377-402d-47a0-943a-465a4216e16b" class="">
+</p><p id="2209671a-6ff9-43df-8108-fc8db4036402" class="">
+</p><p id="e8800142-aff9-4aec-9d5b-fc0041a95719" class="">
+</p><p id="573a7556-03fb-4636-a95f-7b75ff9bcae2" class="">
+</p><p id="4a682875-9808-46c5-ada0-280185130e3b" class="">
+</p><p id="9e2b2956-d804-4ef2-8c32-8a022337f7f0" class=""><strong>Second Try</strong></p><figure id="a4d3250e-cee4-4456-94b8-d0c22470e268" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2052.png"><img style="width:596px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2052.png"/></a></figure><p id="a158821c-2f24-4d9f-9f9c-f498c927ed23" class="">
+</p><p id="3a726817-a55a-44f8-97f4-3a264f4fcaa2" class="">
+</p><p id="d6749e15-331e-48a3-9a24-6450c1376b50" class="">
+</p><p id="a02ee38c-c931-43d4-aa01-c4aa85179327" class="">
+</p><p id="a99efa1a-18d5-4479-a4b9-999a7e04dabd" class="">
+</p><p id="9c24c202-a272-40a2-a3a5-71703c33d0a3" class="">
+</p><p id="b460ec13-80a6-4136-be8d-03c6e376dd07" class=""><strong>Third Try</strong></p><figure id="d09a7bc4-fc96-4966-a90d-cfa9552dddc0" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2053.png"><img style="width:1520px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2053.png"/></a></figure></div><div id="fd1ca245-15fc-43b0-a622-bd394949e64f" style="width:50%" class="column"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c27d0fc8-9d4d-491c-9b43-e1eb637b4ddf" class="code"><code class="language-Python">import pandas as pd
+import networkx as nx
+import matplotlib.pyplot as plt
+data_df = pd.read_csv(&#x27;data/dreams_with_keywords.csv&#x27;)
+
+G = nx.Graph()
+
+emotion_colors = {
+    &#x27;admiration&#x27;: &#x27;yellow&#x27;,
+    &#x27;amusement&#x27;: &#x27;orange&#x27;,
+    &#x27;anger&#x27;: &#x27;red&#x27;,
+    &#x27;annoyance&#x27;: &#x27;pink&#x27;,
+    &#x27;approval&#x27;: &#x27;lime&#x27;,
+    &#x27;caring&#x27;: &#x27;cyan&#x27;,
+    &#x27;confusion&#x27;: &#x27;purple&#x27;,
+    &#x27;curiosity&#x27;: &#x27;blue&#x27;,
+    &#x27;desire&#x27;: &#x27;magenta&#x27;,
+    &#x27;disappointment&#x27;: &#x27;brown&#x27;,
+    &#x27;disapproval&#x27;: &#x27;gray&#x27;,
+    &#x27;disgust&#x27;: &#x27;olive&#x27;,
+    &#x27;embarrassment&#x27;: &#x27;maroon&#x27;,
+    &#x27;excitement&#x27;: &#x27;gold&#x27;,
+    &#x27;fear&#x27;: &#x27;teal&#x27;,
+    &#x27;gratitude&#x27;: &#x27;silver&#x27;,
+    &#x27;grief&#x27;: &#x27;navy&#x27;,
+    &#x27;joy&#x27;: &#x27;salmon&#x27;,
+    &#x27;love&#x27;: &#x27;lightcoral&#x27;,
+    &#x27;nervousness&#x27;: &#x27;turquoise&#x27;,
+    &#x27;optimism&#x27;: &#x27;khaki&#x27;,
+    &#x27;pride&#x27;: &#x27;coral&#x27;,
+    &#x27;realization&#x27;: &#x27;plum&#x27;,
+    &#x27;relief&#x27;: &#x27;springgreen&#x27;,
+    &#x27;remorse&#x27;: &#x27;sienna&#x27;,
+    &#x27;sadness&#x27;: &#x27;steelblue&#x27;,
+    &#x27;surprise&#x27;: &#x27;lightgreen&#x27;,
+    &#x27;neutral&#x27;: &#x27;black&#x27;
+}
+
+# Add nodes and edges
+for _, row in data_df.iterrows():
+    keyword = row[&#x27;keyword&#x27;]
+    emotion = row[&#x27;dominant_emotion&#x27;]
+    G.add_node(keyword, type=&#x27;keyword&#x27;)
+    if not G.has_node(emotion):
+        G.add_node(emotion, type=&#x27;emotion&#x27;)
+    G.add_edge(keyword, emotion)
+
+pos = nx.spring_layout(G, k=0.15)  # k controls the distance between nodes
+node_colors = [emotion_colors[node] if G.nodes[node][&#x27;type&#x27;] == &#x27;emotion&#x27; else &#x27;lightblue&#x27; for node in G.nodes()]
+node_sizes = [300 if G.nodes[node][&#x27;type&#x27;] == &#x27;emotion&#x27; else 100 for node in G.nodes()]
+
+plt.figure(figsize=(15, 15))
+nx.draw(G, pos, with_labels=True, node_color=node_colors, edge_color=&#x27;gray&#x27;, font_size=8, node_size=node_sizes)
+plt.show()
+</code></pre><p id="c679542e-84d9-4149-8a98-c36c29b8d1e8" class="">
+</p><p id="1bbb67fe-d89c-4db7-81a7-0734785130f1" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="bc4f4600-40b1-4672-8a9d-235639911bab" class="code"><code class="language-Python">for _, row in data_df.iterrows():
+    keyword = row[&#x27;keyword&#x27;]
+    emotion = row[&#x27;dominant_emotion&#x27;]
+    G.add_node(keyword, type=&#x27;keyword&#x27;)
+    if not G.has_node(emotion):
+        G.add_node(emotion, type=&#x27;emotion&#x27;)
+    G.add_edge(keyword, emotion)
+
+# Create radial layout
+def radial_layout(graph, center, radius):
+    pos = {}
+    num_keywords = sum(1 for node in graph if graph.nodes[node][&#x27;type&#x27;] == &#x27;keyword&#x27;)
+    angle_step = 2 * math.pi / num_keywords
+    angle = 0
+    
+    for node in graph:
+        if graph.nodes[node][&#x27;type&#x27;] == &#x27;keyword&#x27;:
+            pos[node] = (center[0] + radius * math.cos(angle), center[1] + radius * math.sin(angle))
+            angle += angle_step
+        else:
+            pos[node] = center
+    return pos
+
+center = (0, 0)
+radius = 10
+pos = radial_layout(G, center, radius)
+
+# Draw the graph
+node_colors = [emotion_colors[node] if G.nodes[node][&#x27;type&#x27;] == &#x27;emotion&#x27; else &#x27;lightblue&#x27; for node in G.nodes()]
+node_sizes = [300 if G.nodes[node][&#x27;type&#x27;] == &#x27;emotion&#x27; else 100 for node in G.nodes()]
+
+plt.figure(figsize=(15, 15))
+nx.draw(G, pos, with_labels=True, node_color=node_colors, edge_color=&#x27;gray&#x27;, font_size=8, node_size=node_sizes, edgecolors=&#x27;black&#x27;, linewidths=0.5)
+plt.show()</code></pre><p id="d1613266-b5d0-46e8-8bcb-f6865afd76aa" class="">
+</p><p id="a4d40c7b-7f24-43ef-b090-e704b81a8d39" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="172cad49-842b-43d7-bc10-0fcb5edcbf51" class="code"><code class="language-Python">
+#the rest remains same
+for _, row in filtered_df.iterrows():
+    keyword = row[&#x27;keyword&#x27;]
+    emotion = row[&#x27;dominant_emotion&#x27;]
+    G.add_node(keyword, type=&#x27;keyword&#x27;)
+    if not G.has_node(emotion):
+        G.add_node(emotion, type=&#x27;emotion&#x27;)
+    G.add_edge(keyword, emotion, color=emotion_colors[emotion])
+
+# Create radial layout
+def radial_layout(graph, center, radius):
+    pos = {}
+    num_keywords = sum(1 for node in graph if graph.nodes[node][&#x27;type&#x27;] == &#x27;keyword&#x27;)
+    angle_step = 2 * math.pi / num_keywords
+    angle = 0
+    
+    for node in graph:
+        if graph.nodes[node][&#x27;type&#x27;] == &#x27;keyword&#x27;:
+            pos[node] = (center[0] + radius * math.cos(angle), center[1] + radius * math.sin(angle))
+            angle += angle_step
+        else:
+            pos[node] = center
+    return pos
+
+center = (0, 0)
+radius = 10
+pos = radial_layout(G, center, radius)
+
+# Draw the graph
+node_colors = [emotion_colors[node] if G.nodes[node][&#x27;type&#x27;] == &#x27;emotion&#x27; else &#x27;lightblue&#x27; for node in G.nodes()]
+node_sizes = [300 if G.nodes[node][&#x27;type&#x27;] == &#x27;emotion&#x27; else 100 for node in G.nodes()]
+edge_colors = [G[u][v][&#x27;color&#x27;] for u, v in G.edges()]
+
+plt.figure(figsize=(15, 15))
+nx.draw(G, pos, with_labels=True, node_color=node_colors, edge_color=edge_colors, font_size=8, node_size=node_sizes, edgecolors=&#x27;black&#x27;, linewidths=0.5)
+plt.show()
+</code></pre></div></div><div id="d551f60d-0fda-4650-9b6f-11f023e5230e" class="column-list"><div id="6b7a0f09-c717-4f8f-898d-1b2f909c691e" style="width:50%" class="column"><p id="6ab9a0e7-4018-4777-8369-2d07ee0cb945" class=""><strong>Fourth Try: Add Interactivity and Deploy Online</strong></p><p id="3581730f-8ac0-48a0-b69e-7f6cc3bb3e90" class="">
+</p><figure id="bb4dfae4-832b-4451-8dd4-5b888319157a" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/9e88dc25-44ff-4c34-bfc8-66898d5a3af3.png"><img style="width:557.006092254134px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/9e88dc25-44ff-4c34-bfc8-66898d5a3af3.png"/></a></figure><p id="c92040d3-e946-4b3e-bc63-b3883bc776cc" class="">
+</p></div><div id="6b305ef7-e97b-42a0-a877-b48703aabab4" style="width:50%" class="column"><p id="de901a9d-300b-45e9-a668-ca392d468fc2" class="">
+</p><p id="91dc79e4-9438-48be-b4b2-2838c4834275" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="95c540d9-6f5c-4d22-90a5-2b433be9c9ae" class="code"><code class="language-Python">import pandas as pd
+import networkx as nx
+import plotly.graph_objects as go
+import plotly.io as pio
+import math
+
+data_df = pd.read_csv(&#x27;data/dreams_with_keywords.csv&#x27;)
+
+# Identify top 100 most frequent keywords
+top_keywords = data_df[&#x27;keyword&#x27;].value_counts().head(100).index
+
+# Filter data to include only rows with top 100 keywords
+filtered_df = data_df[data_df[&#x27;keyword&#x27;].isin(top_keywords)]
+G = nx.Graph()
+
+# Define a color map for emotions, excluding &#x27;neutral&#x27;
+emotion_colors = {
+    &#x27;admiration&#x27;: &#x27;yellow&#x27;,
+    &#x27;amusement&#x27;: &#x27;orange&#x27;,
+    &#x27;anger&#x27;: &#x27;red&#x27;,
+    &#x27;annoyance&#x27;: &#x27;pink&#x27;,
+    &#x27;approval&#x27;: &#x27;lime&#x27;,
+    &#x27;caring&#x27;: &#x27;cyan&#x27;,
+    &#x27;confusion&#x27;: &#x27;purple&#x27;,
+    &#x27;curiosity&#x27;: &#x27;blue&#x27;,
+    &#x27;desire&#x27;: &#x27;magenta&#x27;,
+    &#x27;disappointment&#x27;: &#x27;brown&#x27;,
+    &#x27;disapproval&#x27;: &#x27;gray&#x27;,
+    &#x27;disgust&#x27;: &#x27;olive&#x27;,
+    &#x27;embarrassment&#x27;: &#x27;maroon&#x27;,
+    &#x27;excitement&#x27;: &#x27;gold&#x27;,
+    &#x27;fear&#x27;: &#x27;teal&#x27;,
+    &#x27;gratitude&#x27;: &#x27;silver&#x27;,
+    &#x27;grief&#x27;: &#x27;navy&#x27;,
+    &#x27;joy&#x27;: &#x27;salmon&#x27;,
+    &#x27;love&#x27;: &#x27;lightcoral&#x27;,
+    &#x27;nervousness&#x27;: &#x27;turquoise&#x27;,
+    &#x27;optimism&#x27;: &#x27;khaki&#x27;,
+    &#x27;pride&#x27;: &#x27;coral&#x27;,
+    &#x27;realization&#x27;: &#x27;plum&#x27;,
+    &#x27;relief&#x27;: &#x27;springgreen&#x27;,
+    &#x27;remorse&#x27;: &#x27;sienna&#x27;,
+    &#x27;sadness&#x27;: &#x27;steelblue&#x27;,
+    &#x27;surprise&#x27;: &#x27;lightgreen&#x27;
+    # &#x27;neutral&#x27; excluded
+}
+
+# Add nodes and edges
+for _, row in filtered_df.iterrows():
+    keyword = row[&#x27;keyword&#x27;]
+    emotion = row[&#x27;dominant_emotion&#x27;]
+    if emotion != &#x27;neutral&#x27;:  # Exclude &#x27;neutral&#x27; emotion
+        G.add_node(keyword, type=&#x27;keyword&#x27;, emotion=emotion)
+        if not G.has_node(emotion):
+            G.add_node(emotion, type=&#x27;emotion&#x27;)
+        G.add_edge(keyword, emotion, color=emotion_colors[emotion])
+
+# Create radial layout
+def radial_layout(graph, center, radius):
+    pos = {}
+    num_keywords = sum(1 for node in graph if graph.nodes[node][&#x27;type&#x27;] == &#x27;keyword&#x27;)
+    angle_step = 2 * math.pi / num_keywords
+    angle = 0
+    
+    for node in graph:
+        if graph.nodes[node][&#x27;type&#x27;] == &#x27;keyword&#x27;:
+            pos[node] = (center[0] + radius * math.cos(angle), center[1] + radius * math.sin(angle))
+            angle += angle_step
+        else:
+            pos[node] = center
+    return pos
+
+center = (0, 0)
+radius = 10
+pos = radial_layout(G, center, radius)
+
+# Plotly Graph Objects
+edge_traces = []
+for emotion, color in emotion_colors.items():
+    edge_x = []
+    edge_y = []
+    edge_text = []
+    for edge in G.edges(data=True):
+        if edge[2][&#x27;color&#x27;] == color:
+            x0, y0 = pos[edge[0]]
+            x1, y1 = pos[edge[1]]
+            edge_x.append(x0)
+            edge_x.append(x1)
+            edge_x.append(None)
+            edge_y.append(y0)
+            edge_y.append(y1)
+            edge_y.append(None)
+            edge_text.append(f&quot;{edge[0]} - {edge[1]}&quot;)
+    edge_trace = go.Scatter(
+        x=edge_x, y=edge_y,
+        line=dict(width=0.5, color=color),
+        hoverinfo=&#x27;text&#x27;,
+        hovertext=edge_text,
+        mode=&#x27;lines&#x27;,
+        legendgroup=emotion,
+        showlegend=True,
+        name=emotion
+    )
+    edge_traces.append(edge_trace)
+
+node_x = []
+node_y = []
+node_text = []
+node_hovertext = []
+node_color = []
+for node in G.nodes():
+    x, y = pos[node]
+    node_x.append(x)
+    node_y.append(y)
+    node_text.append(node)
+    if G.nodes[node][&#x27;type&#x27;] == &#x27;keyword&#x27;:
+        node_hovertext.append(f&quot;{node} - {G.nodes[node][&#x27;emotion&#x27;]}&quot;)
+        node_color.append(&#x27;lightblue&#x27;)
+    else:
+        node_hovertext.append(node)
+        node_color.append(emotion_colors[node])
+
+node_trace = go.Scatter(
+    x=node_x, y=node_y,
+    mode=&#x27;markers+text&#x27;,
+    hoverinfo=&#x27;text&#x27;,
+    text=node_text,
+    hovertext=node_hovertext,
+    marker=dict(
+        color=node_color,
+        size=10,
+        line=dict(width=2)
+    ),
+    textposition=&#x27;top center&#x27;,
+    showlegend=True,
+    name=&#x27;showing words&#x27;,
+    legendgroup=&#x27;showing words&#x27;
+)
+
+# Create Plotly figure
+fig = go.Figure(data=[node_trace] + edge_traces,
+                layout=go.Layout(
+                    title=&#x27;Keywords and Emotions Network&#x27;,
+                    showlegend=True,
+                    hovermode=&#x27;closest&#x27;,
+                    margin=dict(b=20, l=5, r=5, t=40),
+                    annotations=[dict(
+                        text=&quot;Interactive network graph&quot;,
+                        showarrow=False,
+                        xref=&quot;paper&quot;, yref=&quot;paper&quot;,
+                        x=0.005, y=-0.002
+                    )],
+                    xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+                    yaxis=dict(showgrid=False, zeroline=False, showticklabels=False))
+                )
+
+# Save to HTML
+pio.write_html(fig, file=&#x27;keywords_emotions_network_modified_2.html&#x27;, auto_open=True)
+</code></pre></div></div><h2 id="002eee12-e60a-4457-8d45-1c9b202557f0" class="">10. Web Development</h2><div id="e003bbf7-d9f1-4176-80ca-77bd6ab91543" class="column-list"><div id="71e671bc-31a7-4ec6-b6e9-b9d7725ef17d" style="width:50%" class="column"><figure id="f3e2d7cc-e290-4cca-9bcd-fc5952a62280" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/ab291ea7-b4a4-44b8-a9d9-aac41fa1a2e2.png"><img style="width:553.1547104580811px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/ab291ea7-b4a4-44b8-a9d9-aac41fa1a2e2.png"/></a></figure><p id="06a8508b-08de-4df2-9ecf-3343a0470861" class="">Hover onto the blue shapes there is going to be animations.</p><figure id="c16bce1e-424c-44a5-b982-d9a4d4a8930c" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/1baf090d-ca2f-40fa-9fef-629cebb86556.png"><img style="width:552.6770293609671px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/1baf090d-ca2f-40fa-9fef-629cebb86556.png"/></a></figure><figure id="a174664c-872d-431b-8920-183846b89b29" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/7d4f535d-fb73-4040-ac4c-5382c4acbf9e.png"><img style="width:555.5555555555557px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/7d4f535d-fb73-4040-ac4c-5382c4acbf9e.png"/></a></figure><figure id="ff3c2852-09fe-4d07-8771-9e59d249a574" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/6d835412-34c5-458a-8991-99b13ed212a9.png"><img style="width:552.200172562554px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/6d835412-34c5-458a-8991-99b13ed212a9.png"/></a></figure><figure id="37d46ae2-f803-497b-98fb-e588d2cc861b" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/1f295267-51cd-460a-9da1-7247c574d33f.png"><img style="width:552.200172562554px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/1f295267-51cd-460a-9da1-7247c574d33f.png"/></a></figure><figure id="670d7a58-867c-4f11-9fe4-a64eaa2ec253" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/cd9498e9-5d1e-46c8-bcde-428abb629085.png"><img style="width:553.1547104580812px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/cd9498e9-5d1e-46c8-bcde-428abb629085.png"/></a></figure></div><div id="1e2bd532-4e9b-49b6-82ac-3bfd05f89094" style="width:50%" class="column"><figure id="21150d96-36ae-4ca9-a204-edc26020654a" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/c9388a9c-7299-457b-8b9a-77afff39b34e.png"><img style="width:549.828178694158px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/c9388a9c-7299-457b-8b9a-77afff39b34e.png"/></a></figure><p id="6a308964-59c2-4438-848d-6c925fe5cbdd" class="">
+</p><figure id="18e3d7a8-55e9-4ccd-9095-3cdbea9113d6" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/ecde0b05-6931-45fc-bfb3-0fdda8c8673f.png"><img style="width:551.7241379310344px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/ecde0b05-6931-45fc-bfb3-0fdda8c8673f.png"/></a></figure><figure id="76580902-9df1-4a02-bd4e-7f0101f68c79" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/a99bc749-ddd2-4de1-bb7b-4ca456ec8bab.png"><img style="width:556.0382276281493px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/a99bc749-ddd2-4de1-bb7b-4ca456ec8bab.png"/></a></figure><figure id="f910e919-3215-4ddc-825d-611c14638c84" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/7ecbd77e-7496-46a2-a69b-59282cacf422.png"><img style="width:554.5927209705372px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/7ecbd77e-7496-46a2-a69b-59282cacf422.png"/></a></figure><figure id="97e7c027-d65c-465d-9e38-9fd17a756c92" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/cba278e0-cb63-41eb-9b6b-8f4455d4dfa7.png"><img style="width:551.2489233419466px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/cba278e0-cb63-41eb-9b6b-8f4455d4dfa7.png"/></a></figure><figure id="0ddb2f35-9583-4194-a14f-e74bb92900e0" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/54be6a8c-f89b-448f-9bdc-3040101cc254.png"><img style="width:551.7241379310344px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/54be6a8c-f89b-448f-9bdc-3040101cc254.png"/></a></figure></div></div><h2 id="d746f40d-c6f7-49e2-9d13-d4ce8053f01f" class="">11. <strong>Trial and Errors</strong></h2><h3 id="2da4f13b-e111-427e-96ed-0ec896de2858" class="">WordSwarm</h3><p id="c4af3dee-a94d-42e7-bac0-9215674b0898" class=""><a href="https://github.com/thisIsMikeKane/WordSwarm?tab=readme-ov-file">https://github.com/thisIsMikeKane/WordSwarm?tab=readme-ov-file</a></p><div id="e65459db-bfef-4096-b292-9ec5ba0ba542" class="column-list"><div id="17a2db6d-fe25-409a-ae16-9724416f90fa" style="width:33.33333333333333%" class="column"><figure id="be81c022-0410-466e-ba77-fe01877431f5" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2054.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2054.png"/></a></figure><figure id="1bb06f4f-4b33-47ad-b8c3-7e27313657fb" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2055.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2055.png"/></a></figure><figure id="6e855401-5b4d-4257-84a5-ec6defd2c7a2" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2056.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2056.png"/></a></figure></div><div id="1b19c6f0-0f59-4e2e-b522-f322d87977a7" style="width:33.33333333333333%" class="column"><figure id="ef8f5bb3-dcd3-4825-9816-622145705b47" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2057.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2057.png"/></a></figure><p id="68146229-743c-482f-a1e4-69e3a3326821" class="">
+</p></div><div id="c019e6e1-34e2-4b53-9a8e-d7de9aece1f3" style="width:33.33333333333333%" class="column"><figure id="813c56f7-c38b-4523-a157-20691d4bfeb8" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2058.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2058.png"/></a></figure><figure id="cc388932-132d-4bc5-859e-09c67035d7a5" class="image"><a href="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2059.png"><img style="width:708px" src="The%20Organic%20Dreams%20Visualizing%20the%20Unseen%20a02f0e23519a4b1282dafc0f66b26e65/Untitled%2059.png"/></a></figure></div></div><p id="0aa2447a-bf3c-458e-b1b2-d5fd777a84ea" class=""><a href="https://github.com/jimregan/ngramtool?tab=readme-ov-file">https://github.com/jimregan/ngramtool?tab=readme-ov-file</a> Documentations on “text2ngram”</p><p id="d3a50f7e-d716-4f9b-a4e8-a46617702f2d" class="">
+</p><p id="7263986f-d3bb-4245-b394-cbab77cecf9f" class="">possible reasons why text2ngram can&#x27;t be installed on my macbook</p><ol type="1" id="2d71c4b9-0f0e-4a82-945d-0c9e599292b8" class="numbered-list" start="1"><li>Dependency Issues:<strong> </strong><code><strong>text2ngram</strong></code></li></ol><ol type="1" id="1d06c0e6-deee-4ebe-9224-e6f6aa7a5912" class="numbered-list" start="2"><li>Compatibility with macOS: <code><strong>text2ngram</strong></code> may not be fully compatible with macOS or may require additional configuration to work properly on a Mac. </li></ol><p id="4d710d98-aae8-49f4-9447-49a03fe403ed" class="">
+</p><h2 id="a39dc204-a684-4c89-bafd-52856424b851" class="">12. <strong>Reflection</strong></h2><p id="cd67a39e-477f-4fd9-8c38-88d5883349c9" class=""><strong>What I have accomplished:</strong></p><ul id="9d5ba375-342e-4cca-b35a-7028471af5c0" class="bulleted-list"><li style="list-style-type:disc">Data Processing: Text classification, data cleaning, etc.</li></ul><ul id="e4c20bec-be69-4ca9-99c7-7bf126b601b6" class="bulleted-list"><li style="list-style-type:disc">Practiced NLP with Python libraries (since most of the dream data I’m dealing with are text).</li></ul><ul id="8488d5ba-5cb0-47e8-ab6a-b491f143f3c0" class="bulleted-list"><li style="list-style-type:disc">Text processing techniques like sentiment analysis, LDA topic modelling, N-gram analysis, etc.</li></ul><ul id="6641f169-6724-4258-ba89-8372b086102c" class="bulleted-list"><li style="list-style-type:disc">Practiced visualization with Python libraries: plotly, seaborn, matplotlib, wordcloud, etc.</li></ul><ul id="c5c778ee-a0ea-47d7-a3f7-db0d3c2e2744" class="bulleted-list"><li style="list-style-type:disc">Web development: 1. JavaScript + HTML 2. Connecting Python files to the web.</li></ul><ul id="efe076a9-6e67-4a23-b1ba-67abe7561888" class="bulleted-list"><li style="list-style-type:disc">Aesthetic visualizations with different kinds of charts: wordcloud, bar charts, pie charts, heatmaps, bubble charts, alluvial, etc.</li></ul><ul id="a1b0d844-c3ff-48ff-8c6b-4df935edc2ed" class="bulleted-list"><li style="list-style-type:disc">Visual research and design considerations.</li></ul><p id="f086770c-d8fa-4cc6-9c58-2dbd99f109fa" class="">
+</p><p id="347bbe51-d622-4499-9df1-32d1e1f8babf" class=""><strong>What could be improved/done in the future:</strong></p><ul id="6989ea51-9bad-4dc2-a03b-257616e9ba31" class="bulleted-list"><li style="list-style-type:disc">The full dream catcher infographic (with more decorative elements like feathers, beads, etc.)</li></ul><ul id="1a00a58d-54ca-48f8-90e1-33fa9e1dc5f1" class="bulleted-list"><li style="list-style-type:disc">A gallery view of all the visualizations I have done at the homepage of the website.</li></ul><ul id="2d2d20c2-fea7-4bf4-9b05-4df2393c24f5" class="bulleted-list"><li style="list-style-type:disc">For flying &amp; falling dreams: I want to create “falling” and “flying” animations for the bubbles with D3.js</li></ul><ul id="8b0217fc-af66-43ac-a5cf-2fae7f53b465" class="bulleted-list"><li style="list-style-type:disc">3-gram or 4-gram analysis and visualization on different datasets. (since I used mostly bigrams in my work)</li></ul><ul id="b0db3eda-8ee3-4662-b7f9-d144a2171568" class="bulleted-list"><li style="list-style-type:disc">More interpretation and analysis on current graphs: what conclusion could possibly be drawn?</li></ul><h2 id="55824c62-de67-4e53-b0a4-e7fee0ee093d" class="">13. <strong>References</strong></h2><h3 id="fd030488-ad4c-4500-9272-18f0f3193f3e" class="">13.1 Code References</h3><p id="1dd8357c-97f2-43eb-9667-9626c1d095f1" class=""><a href="https://tympanus.net/codrops/2017/06/28/organic-shape-animations-with-svg-clippath/">https://tympanus.net/codrops/2017/06/28/organic-shape-animations-with-svg-clippath/</a></p><p id="f95dde17-595a-4e28-af1e-c70f1592b9fb" class=""><a href="https://www.datacamp.com/tutorial/wordcloud-python">https://www.datacamp.com/tutorial/wordcloud-python</a></p><p id="dfe6fcb5-f8b7-4328-967f-c7e318e2b8d9" class=""><a href="https://www.youtube.com/watch?v=b9-0GpCqAQw&amp;t=833s">https://www.youtube.com/watch?v=b9-0GpCqAQw&amp;t=833s</a></p><figure id="5479c339-c017-46fe-bcf2-41cd834f2bc2"><div class="source">https://github.com/amrrs/emotion-detection-from-text-python</div></figure><p id="82c15b83-743d-4bb7-89ef-161599816bc1" class=""><a href="https://github.com/amueller/word_cloud?tab=readme-ov-file">https://github.com/amueller/word_cloud?tab=readme-ov-file</a></p><p id="55432a79-2cc9-4ba5-ab8b-ddf195c4ea00" class=""><a href="https://stackoverflow.com/questions/33587667/extracting-all-nouns-from-a-text-file-using-nltk">https://stackoverflow.com/questions/33587667/extracting-all-nouns-from-a-text-file-using-nltk</a></p><p id="7df4bf7f-2546-47bc-adfc-d57b220620b9" class=""><a href="https://github.com/thisIsMikeKane/WordSwarm?tab=readme-ov-file">https://github.com/thisIsMikeKane/WordSwarm?tab=readme-ov-file</a></p><h3 id="4e59288f-c902-4db2-8796-3d4fe4c9bde0" class="">13.2 Design References</h3><p id="0c5026cd-fbfe-4522-87b0-4de423181ffe" class=""><a href="https://youtu.be/Mlw_L9yNGmc">https://youtu.be/Mlw_L9yNGmc</a></p><p id="00607736-252d-455f-95ca-0d602a759fdf" class=""><a href="https://www.flerlagetwins.com/2019/09/text-analysis.html">https://www.flerlagetwins.com/2019/09/text-analysis.html</a></p><p id="a20bc9ec-b76d-483d-a91f-6992d979627f" class=""><a href="https://kristendavis27.medium.com/wordcloud-style-guide-2f348a03a7f8">https://kristendavis27.medium.com/wordcloud-style-guide-2f348a03a7f8</a></p><p id="4b7279db-a9b9-4748-8a6c-f17a541235d7" class=""><a href="https://editor.p5js.org/zomert1/sketches/B1k0WpG6W">https://editor.p5js.org/zomert1/sketches/B1k0WpG6W</a></p><h3 id="a8cacd41-75aa-4896-97e6-d7be230f4e80" class="">13.3 Ideation References</h3><p id="12461682-57cb-4b49-aa24-72c72e7fe403" class=""><a href="https://www.kaggle.com/code/sarikakv1221/human-dream-anlaysis-ner-sentiment-analysis-lda">https://www.kaggle.com/code/sarikakv1221/human-dream-anlaysis-ner-sentiment-analysis-lda</a></p><p id="9452c738-275c-4590-b1df-985e5146bd6b" class=""><a href="https://the-shape-of-dreams.com/#/">https://the-shape-of-dreams.com/#/</a></p><p id="b833ccb6-ca20-4144-905d-d8ee58064073" class=""><a href="https://medium.com/@federicafragapane/visualizing-the-shape-of-dreams-for-google-trends-5164c3c4e382">https://medium.com/@federicafragapane/visualizing-the-shape-of-dreams-for-google-trends-5164c3c4e382</a></p><h3 id="2499ea21-0782-4284-8395-7a4cf1d93cfc" class="">13.4 Dataset References</h3><p id="a298f09a-12f6-4cac-955e-e943fb95eceb" class=""><a href="https://datadryad.org/stash/dataset/doi:10.5061/dryad.qbzkh18fr">https://datadryad.org/stash/dataset/doi:10.5061/dryad.qbzkh18fr</a></p><p id="8c86cc85-89ce-4d6d-8163-1c018703ef87" class=""><a href="https://sleepanddreamdatabase.org/">https://sleepanddreamdatabase.org/</a></p><p id="6c188875-64a1-4e67-8778-0ad04ac80d44" class=""><a href="https://www.kaggle.com/datasets/lgoareguer/fractal-dream-dataset">https://www.kaggle.com/datasets/lgoareguer/fractal-dream-dataset</a></p><p id="3b7683f1-5035-4c91-af8f-4e48daeba366" class="">
+</p><p id="5bb00f9c-0181-4bee-8e68-b3cde51bcd56" class="">Special thanks to Stella, Mayra, and Ilya for helping me along my journey in exploring data visualization!</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

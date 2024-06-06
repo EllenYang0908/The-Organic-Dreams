@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucid Dreams</title>
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', cursive;
+            background: #5b5b9e;
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-family: 'Cormorant Garamond', serif; /* 设置h1的字体家族 */
+            font-size: 24px; /* 设置h1的字体大小 */
+            color: #bdabf5; /* 设置h1的字体颜色 */
+            margin-top:0%;
+            margin-bottom: 10px; /* 设置h1的下外边距 */
+        }
+        .header p {
+            font-family:'Cormorant Garamond', serif; /* 设置p的字体家族 */
+            font-size: 16px; /* 设置p的字体大小 */
+            color: #bdabf5; /* 设置p的字体颜色 */
+            line-height: 1.5; /* 设置p的行高 */
+            margin-top: 0; /* 设置p的上外边距 */
+        }
+
+        .flourish-embed {
+            width:75%;
+            height: 500px;
+            margin-bottom: 20px;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: rgb(76, 179, 214);
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .inline-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .inline-images img {
+            width: 600px;
+            height: 400px; 
+            object-fit: cover;
+        }
+        inline-images2 {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .inline-images2 img {
+            width: 500px;
+            height: 250px; 
+            object-fit: cover;
+        }
+        .text {
+            font-family: 'Cormorant Garamond';
+            background: #5b5b9e;
+            color: aliceblue;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            clear: both; /* Ensure it moves below any floating elements */
+            width: 100%;
+            padding: 20px; /* Add padding for better readability */
+            box-sizing: border-box;
+            /* padding: 20px; */
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            width:400px;
+            height: 250px; 
+        }
+        .gallery2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .gallery2 img {
+            width: 100%;
+            height: auto;
+            width:300px;
+            height: 250px;
+        }
+        .large-image {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .large-image img {
+            width: 80%;
+            height: auto;
+        }
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <a href="index.html" class="home-button">Back to Homepage</a>
+
+    <div class="container">
+        <div class="header">
+            <h1>The Second Night: Demographic Information Analysis of Lucid Dreams</h1>
+            <p>This data visualization aims to explore relationship between demographic factors of lucid dreams. The dataset is from Sleep and Dream Database.</p>
+        </div>
+        <div class="inline-images">
+            <img src="img/ss1.png" alt="Lucid Dream Analysis 1">
+            <img src="img/ss2.png" alt="Lucid Dream Analysis 2">
+        </div>
+        <div class="text">
+            <p>The Sleep and Dream Database (SDDb)</p>
+            
+            
+            <br>
+            <br>
+            <br>
+            <h2>Demographic Information of the Lucid Dream Dataset Visualizations</h2>
+            <div class="gallery">
+                <img src="img/d1.png" alt="Gallery Image 1">
+                <img src="img/d2.png" alt="Gallery Image 2">
+                <img src="img/d3.png" alt="Gallery Image 3">
+                <img src="img/d4.png" alt="Gallery Image 4">
+                <img src="img/d5.png" alt="Gallery Image 5">
+                <img src="img/d6.png" alt="Gallery Image 6">
+                <img src="img/d7.png" alt="Gallery Image 7">
+                <img src="img/d8.png" alt="Gallery Image 8">
+                <img src="img/d10.png" alt="Gallery Image 9">
+            </div>
+    
+            <!-- Larger Image -->
+            <div class="large-image">
+                <img src="img/d9.png" alt="Larger Gallery Image">
+            </div>
+
+            <div class="gallery2">
+                <img src="img/p1.png" alt="Gallery Image 1">
+                <img src="img/p2.png" alt="Gallery Image 2">
+                <img src="img/p3.png" alt="Gallery Image 3">
+                <img src="img/p4.png" alt="Gallery Image 4">
+                <img src="img/p5.png" alt="Gallery Image 5">
+                <img src="img/p6.png" alt="Gallery Image 6">
+                <img src="img/p7.png" alt="Gallery Image 7">
+                <img src="img/p8.png" alt="Gallery Image 8">
+                <img src="img/p9.png" alt="Gallery Image 9">
+                <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            </div>
+
+            <h2>LDA: Topic Modelling of Dream Contents & Sentiment Analysis</h2>
+            <img src="img/t1.png" alt="LDA 1" style="display:inline-block; width: 600px; height: 200px;">
+            <br>
+            <img src="img/t2.png" alt="LDA 2" style="display:inline-block; width: 600px;">
+            <br>
+            <img src="img/s1.png" alt="LDA 2" style="display:inline-block; width: 600px;">
+            <br>
+            <img src="img/s2.png" alt="LDA 2" style="display:inline-block; width: 600px;">
+            </div>
+            
+        </div>
+        <div class="text">
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <h2>Sentiment Analysis and Demographic Factors</h2>
+            <p>X Axis: Insomnia Nights Per Week     Y Axis: Income</p>
+        </div>
+        <!-- <div class="inline-images2">
+            <img src="img/t1.png" alt="LDA 1">
+            <img src="img/t2.png" alt="LDA 2">
+        </div> -->
+
+    
+        <div class="flourish-embed flourish-heatmap" data-src="visualisation/18235882"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <div class="text">
+        <p>This result is actually very interesting: People with less money seems to have happier lucid dreams?</p>
+        </div>
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="text">
+        <p>X Axis: Age     Y Axis: Income Tier</p>
+        </div>
+    <div class="flourish-embed flourish-heatmap" data-src="visualisation/18235504"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

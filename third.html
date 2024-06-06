@@ -1,0 +1,151 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color of Dreams</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>The Third Night: Colored Dreams</h1>
+            <p>This data visualization aims to explore the common objects occured in colored dreams. The dataset is from Sleep and Dream Database.</p>
+        </div>
+    <a href="index.html" class="home-button">Back to Homepage</a>
+    <div class="text">
+        <h2>Purple: Dreams that contains word "purple"</h2>
+    </div>
+    <div class="chart-container">
+        <canvas id="purpleChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="blueChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="whiteChart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color of Dreams</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', cursive;
+            background: #5b5b9e;
+            margin-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: rgb(76, 179, 214);
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .chart-container {
+            width: 100%;
+            margin: 0px 0;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        canvas {
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+
+        .container {
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 24px;
+            color: #bdabf5;
+            margin-top:0%;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-family:'Cormorant Garamond', serif; 
+            font-size: 16px;
+            color: #bdabf5;
+            line-height: 1.5;
+            margin-top: 0;
+        }
+
+        .text {
+            font-family: 'Cormorant Garamond';
+            background: #5b5b9e;
+            color: aliceblue;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            clear: both; 
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .text h2 {
+            margin-bottom: 10px; /* Adjust the margin to bring h2 closer to the chart */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>The Third Night: Colored Dreams</h1>
+            <p>This data visualization aims to explore the common objects occurred in colored dreams. The dataset is from Sleep and Dream Database.</p>
+        </div>
+        <a href="index.html" class="home-button">Back to Homepage</a>
+        <div class="text">
+            <h3>Purple: Dreams that contains word "purple"</h3>
+        </div>
+        <div class="chart-container">
+            <canvas id="purpleChart"></canvas>
+        </div>
+        <div class="text">
+            <h3>Blue: Dreams that contains word "blue"</h3>
+        </div>
+        <div class="chart-container">
+            <canvas id="blueChart"></canvas>
+        </div>
+        <div class="text">
+            <h3>White: Dreams that contains word "white"</h3>
+        </div>
+        <div class="chart-container">
+            <canvas id="whiteChart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
